@@ -1,0 +1,63 @@
+// The text in my application never changes so the whole string is rendered to txBuffer
+// after precomputing its dimensions: txWidth and txHeight.
+txBuffer.clear();
+txBuffer.resize(txWidth * txHeight);
+for (size_t i = 0; i < text.length(); i++) {
+    int lsb, dx, dy = (ascent - descent) + lineGap;
+    int kern = stbtt_GetCodepointKernAdvance(fontInfo, text[i], text[i+1]);
+    stbtt_GetCodepointHMetrics(fontInfo, text[i], &dx, &lsb);
+    int x1, y1, x2, y2;
+    stbtt_GetCodepointBitmapBox(fontInfo, text[i], scale, scale, &x1, &y1, &x2, &y2);
+    size_t offset = x + (lsb * scale) + ((y + ascent + y1) * txWidth);
+    stbtt_MakeCodepointBitmap(fontInfo, &txBuffer[offset], x2 - x1, y2 - y1, txWidth, scale, scale, text[i]);
+    x += (dx + kern) * scale;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ lwjgl3 / Truetype.java:
+
+private float getStringWidth(STBTTFontinfo info, String text, int from, int to, int fontHeight) {
+    int width = 0;
+
+    try (MemoryStack stack = stackPush()) {
+        IntBuffer pCodePoint       = stack.mallocInt(1);
+        IntBuffer pAdvancedWidth   = stack.mallocInt(1);
+        IntBuffer pLeftSideBearing = stack.mallocInt(1);
+
+        int i = from;
+        while (i < to) {
+            i += getCP(text, to, i, pCodePoint);
+            int cp = pCodePoint.get(0);
+
+            stbtt_GetCodepointHMetrics(info, cp, pAdvancedWidth, pLeftSideBearing);
+            width += pAdvancedWidth.get(0);
+
+            if (isKerningEnabled() && i < to) {
+                getCP(text, to, i, pCodePoint);
+                width += stbtt_GetCodepointKernAdvance(info, cp, pCodePoint.get(0));
+            }
+        }
+    }
+
+    return width * stbtt_ScaleForPixelHeight(info, fontHeight);
+}
+
+private static int getCP(String text, int to, int i, IntBuffer cpOut) {
+    char c1 = text.charAt(i);
+    if (Character.isHighSurrogate(c1) && i + 1 < to) {
+        char c2 = text.charAt(i + 1);
+        if (Character.isLowSurrogate(c2)) {
+            cpOut.put(0, Character.toCodePoint(c1, c2));
+            return 2;
+        }
+    }
+    cpOut.put(0, c1);
+    return 1;
+}

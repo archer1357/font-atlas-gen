@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <title>fontgen</title>
+        <script type="text/javascript" src="MyFont.js"></script>
+        <script type="text/javascript" src="fontgen.js"></script>
+        <link href="style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <h1>FONTGEN</h1>
+        <h2>Input</h2>
+        <p id="fontFileDrop" class="block fontFileText">
+            <span>Drag and drop or</span>
+            <label for="fontFileChoose"><span class="fontFileChooseButton">choose</span></label>
+            <span>a true type font</span>
+            <input type="file" id="fontFileChoose" accept=".ttf" />
+        </p>
+        -<p class="block fontFileText"><span>Point Size</span> <input id="pointSize" type="text" value="15" /></p>
+        <!--<p class="block"><textarea cols="50"> !&quot;#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~</textarea></p>-->
+        <h2>Output</h2>
+        <p id="output">sss</p>
+        <p><canvas id="outputAtlas" class="block"></canvas></p>
+        <p><code id="outputInfo" class="block">
+{
+    "name": "Arial",
+    "size": 32,
+    "bold": false,
+    "italic": false,
+    "width": 350,
+    "height": 126,
+    "characters": {
+        "0":{"x":116,"y":57,"width":18,"height":25,"originX":0,"originY":24,"advance":18},
+        "1":{"x":106,"y":82,"width":12,"height":25,"originX":-2,"originY":24,"advance":18},
+        "2":{"x":40,"y":57,"width":19,"height":25,"originX":1,"originY":24,"advance":18},
+        "3":{"x":134,"y":57,"width":18,"height":25,"originX":0,"originY":24,"advance":18},
+        "4":{"x":59,"y":57,"width":19,"height":25,"originX":1,"originY":24,"advance":18},
+        "5":{"x":152,"y":57,"width":18,"height":25,"originX":0,"originY":24,"advance":18},
+        "6":{"x":78,"y":57,"width":19,"height":25,"originX":1,"originY":24,"advance":18},
+        "7":{"x":170,"y":57,"width":18,"height":25,"originX":0,"originY":24,"advance":18},
+        "8":{"x":188,"y":57,"width":18,"height":25,"originX":0,"originY":24,"advance":18},
+        "9":{"x":206,"y":57,"width":18,"height":25,"originX":0,"originY":24,"advance":18},
+        " ":{"x":273,"y":107,"width":3,"height":3,"originX":1,"originY":1,"advance":9},
+        "!":{"x":129,"y":82,"width":7,"height":25,"originX":-1,"originY":24,"advance":9},
+        "\"":{"x":178,"y":107,"width":12,"height":10,"originX":0,"originY":24,"advance":11},
+        "#":{"x":206,"y":32,"width":21,"height":25,"originX":2,"originY":24,"advance":18},
+        "$":{"x":117,"y":0,"width":18,"height":29,"originX":0,"originY":25,"advance":18},
+        "%":{"x":194,"y":0,"width":28,"height":25,"originX":0,"originY":24,"advance":28},
+        "&":{"x":96,"y":32,"width":22,"height":25,"originX":0,"originY":24,"advance":21},
+        "'":{"x":197,"y":107,"width":6,"height":10,"originX":0,"originY":24,"advance":6},
+        "(":{"x":65,"y":0,"width":11,"height":31,"originX":0,"originY":24,"advance":11},
+        ")":{"x":76,"y":0,"width":11,"height":31,"originX":0,"originY":24,"advance":11},
+        "*":{"x":164,"y":107,"width":14,"height":12,"originX":1,"originY":24,"advance":12},
+        "+":{"x":71,"y":107,"width":19,"height":17,"originX":0,"originY":20,"advance":19},
+        ",":{"x":190,"y":107,"width":7,"height":10,"originX":-1,"originY":4,"advance":9},
+        "-":{"x":253,"y":107,"width":13,"height":5,"originX":1,"originY":11,"advance":11},
+        ".":{"x":266,"y":107,"width":7,"height":5,"originX":-1,"originY":4,"advance":9},
+        "/":{"x":94,"y":82,"width":12,"height":25,"originX":2,"originY":24,"advance":9},
+        ":":{"x":64,"y":107,"width":7,"height":19,"originX":-1,"originY":18,"advance":9},
+        ";":{"x":157,"y":82,"width":7,"height":24,"originX":-1,"originY":18,"advance":9},
+        "<":{"x":90,"y":107,"width":19,"height":17,"originX":0,"originY":20,"advance":19},
+        "=":{"x":145,"y":107,"width":19,"height":12,"originX":0,"originY":18,"advance":19},
+        ">":{"x":109,"y":107,"width":19,"height":17,"originX":0,"originY":20,"advance":19},
+        "?":{"x":224,"y":57,"width":18,"height":25,"originX":0,"originY":24,"advance":18},
+        "@":{"x":0,"y":0,"width":33,"height":32,"originX":0,"originY":24,"advance":32},
+        "A":{"x":222,"y":0,"width":25,"height":25,"originX":2,"originY":24,"advance":21},
+        "B":{"x":0,"y":57,"width":20,"height":25,"originX":-1,"originY":24,"advance":21},
+        "C":{"x":25,"y":32,"width":24,"height":25,"originX":0,"originY":24,"advance":23},
+        "D":{"x":118,"y":32,"width":22,"height":25,"originX":-1,"originY":24,"advance":23},
+        "E":{"x":20,"y":57,"width":20,"height":25,"originX":-1,"originY":24,"advance":21},
+        "F":{"x":97,"y":57,"width":19,"height":25,"originX":-1,"originY":24,"advance":20},
+        "G":{"x":247,"y":0,"width":25,"height":25,"originX":0,"originY":24,"advance":25},
+        "H":{"x":227,"y":32,"width":21,"height":25,"originX":-1,"originY":24,"advance":23},
+        "I":{"x":136,"y":82,"width":7,"height":25,"originX":-1,"originY":24,"advance":9},
+        "J":{"x":52,"y":82,"width":16,"height":25,"originX":1,"originY":24,"advance":16},
+        "K":{"x":140,"y":32,"width":22,"height":25,"originX":-1,"originY":24,"advance":21},
+        "L":{"x":242,"y":57,"width":18,"height":25,"originX":-1,"originY":24,"advance":18},
+        "M":{"x":272,"y":0,"width":25,"height":25,"originX":-1,"originY":24,"advance":27},
+        "N":{"x":248,"y":32,"width":21,"height":25,"originX":-1,"originY":24,"advance":23},
+        "O":{"x":297,"y":0,"width":25,"height":25,"originX":0,"originY":24,"advance":25},
+        "P":{"x":269,"y":32,"width":21,"height":25,"originX":-1,"originY":24,"advance":21},
+        "Q":{"x":135,"y":0,"width":26,"height":27,"originX":0,"originY":24,"advance":25},
+        "R":{"x":73,"y":32,"width":23,"height":25,"originX":-1,"originY":24,"advance":23},
+        "S":{"x":290,"y":32,"width":21,"height":25,"originX":0,"originY":24,"advance":21},
+        "T":{"x":162,"y":32,"width":22,"height":25,"originX":1,"originY":24,"advance":20},
+        "U":{"x":311,"y":32,"width":21,"height":25,"originX":-1,"originY":24,"advance":23},
+        "V":{"x":49,"y":32,"width":24,"height":25,"originX":1,"originY":24,"advance":21},
+        "W":{"x":161,"y":0,"width":33,"height":25,"originX":1,"originY":24,"advance":30},
+        "X":{"x":322,"y":0,"width":25,"height":25,"originX":2,"originY":24,"advance":21},
+        "Y":{"x":0,"y":32,"width":25,"height":25,"originX":2,"originY":24,"advance":21},
+        "Z":{"x":184,"y":32,"width":22,"height":25,"originX":1,"originY":24,"advance":20},
+        "[":{"x":87,"y":0,"width":10,"height":31,"originX":0,"originY":24,"advance":9},
+        "\\":{"x":68,"y":82,"width":13,"height":25,"originX":2,"originY":24,"advance":9},
+        "]":{"x":97,"y":0,"width":10,"height":31,"originX":1,"originY":24,"advance":9},
+        "^":{"x":128,"y":107,"width":17,"height":14,"originX":1,"originY":24,"advance":15},
+        "_":{"x":231,"y":107,"width":22,"height":5,"originX":2,"originY":-2,"advance":18},
+        "`":{"x":222,"y":107,"width":9,"height":6,"originX":0,"originY":24,"advance":11},
+        "a":{"x":236,"y":82,"width":18,"height":19,"originX":0,"originY":18,"advance":18},
+        "b":{"x":260,"y":57,"width":18,"height":25,"originX":0,"originY":24,"advance":18},
+        "c":{"x":0,"y":107,"width":17,"height":19,"originX":0,"originY":18,"advance":16},
+        "d":{"x":278,"y":57,"width":18,"height":25,"originX":1,"originY":24,"advance":18},
+        "e":{"x":217,"y":82,"width":19,"height":19,"originX":1,"originY":18,"advance":18},
+        "f":{"x":81,"y":82,"width":13,"height":25,"originX":1,"originY":24,"advance":9},
+        "g":{"x":296,"y":57,"width":18,"height":25,"originX":1,"originY":18,"advance":18},
+        "h":{"x":18,"y":82,"width":17,"height":25,"originX":0,"originY":24,"advance":18},
+        "i":{"x":143,"y":82,"width":7,"height":25,"originX":0,"originY":24,"advance":7},
+        "j":{"x":107,"y":0,"width":10,"height":31,"originX":3,"originY":24,"advance":7},
+        "k":{"x":35,"y":82,"width":17,"height":25,"originX":0,"originY":24,"advance":16},
+        "l":{"x":150,"y":82,"width":7,"height":25,"originX":0,"originY":24,"advance":7},
+        "m":{"x":191,"y":82,"width":26,"height":19,"originX":0,"originY":18,"advance":27},
+        "n":{"x":17,"y":107,"width":17,"height":19,"originX":0,"originY":18,"advance":18},
+        "o":{"x":254,"y":82,"width":18,"height":19,"originX":0,"originY":18,"advance":18},
+        "p":{"x":314,"y":57,"width":18,"height":25,"originX":0,"originY":18,"advance":18},
+        "q":{"x":332,"y":57,"width":18,"height":25,"originX":1,"originY":18,"advance":18},
+        "r":{"x":51,"y":107,"width":13,"height":19,"originX":0,"originY":18,"advance":11},
+        "s":{"x":272,"y":82,"width":18,"height":19,"originX":1,"originY":18,"advance":16},
+        "t":{"x":118,"y":82,"width":11,"height":25,"originX":1,"originY":24,"advance":9},
+        "u":{"x":34,"y":107,"width":17,"height":19,"originX":0,"originY":18,"advance":18},
+        "v":{"x":290,"y":82,"width":18,"height":19,"originX":1,"originY":18,"advance":16},
+        "w":{"x":164,"y":82,"width":27,"height":19,"originX":2,"originY":18,"advance":23},
+        "x":{"x":308,"y":82,"width":18,"height":19,"originX":1,"originY":18,"advance":16},
+        "y":{"x":0,"y":82,"width":18,"height":25,"originX":1,"originY":18,"advance":16},
+        "z":{"x":326,"y":82,"width":18,"height":19,"originX":1,"originY":18,"advance":16},
+        "{":{"x":39,"y":0,"width":13,"height":31,"originX":1,"originY":24,"advance":11},
+        "|":{"x":33,"y":0,"width":6,"height":32,"originX":-1,"originY":24,"advance":8},
+        "}":{"x":52,"y":0,"width":13,"height":31,"originX":1,"originY":24,"advance":11},
+        "~":{"x":203,"y":107,"width":19,"height":8,"originX":0,"originY":15,"advance":19}
+    }
+}
+        </code></p>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+.block {
+	border-style:dashed;
+	border-width:thin;
+    display:inline-block;
+	margin:5pt;
+	padding: 10pt;
+}
+
+#fontFileChoose {
+	display:none;
+}
+
+.fontFileChooseButton {
+	border-style:solid;
+	border-width:thin;
+	padding: 3pt;
+}
+
+.fontFileText {
+	font-family: "Courier New", Courier, monospace;
+	font-weight: normal;
+	font-size: 10pt;
+}
+
+h1 {
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
+	font-size: 16pt;
+}
+
+
+h2 {
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
+	font-size: 14pt;
+}
+
+#outputAtlas {
+	border-style:dashed;
+	border-width:thin;
+    display:inline-block;
+	margin:5pt;
+	padding: 10pt;
+}
+#outputInfo {
+    white-space:pre-wrap;
+	font-family: "Courier New", Courier, monospace;
+	font-weight: normal;
+	font-size: 8pt;
+}
+
+#outputOuter {
+  //position: fixed;
+ 
+}
